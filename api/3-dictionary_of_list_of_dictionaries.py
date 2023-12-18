@@ -3,9 +3,9 @@
 Records all tasks from all employees, export data in the JSON format.
 """
 
+import json
 import requests
 import sys
-import json
 
 if __name__ == "__main__":
 	"""Actions to be performed only when the script
