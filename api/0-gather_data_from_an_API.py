@@ -33,13 +33,13 @@ if __name__ == "__main__":
         # Display progress information
         print(
             f"Employee {employee_name} is done with "
-            f"tasks({completed_tasks}/{total_tasks}): ")
+            f"tasks({completed_tasks}/{total_tasks}):")
 
         # Display titles of completed tasks
         completed_task_titles = [todo['title'] for todo
                                  in todos_data if todo['completed']]
         for title in completed_task_titles:
-            print(f"\t{title}")
+            print(f"\t {title}")
 
     except requests.exceptions.RequestException as e:
         print(f"Error: {e}")
