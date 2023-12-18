@@ -1,6 +1,7 @@
 #!/usr/bin/python3
 """
-Using what you did in the task #0, extend your Python script to export data in the JSON format.
+Using what you did in the task #0, extend your Python script to export data
+ in the JSON format.
 """
 
 import requests
@@ -29,18 +30,19 @@ if __name__ == "__main__":
         todos_response = requests.get(todos_url)
         todos_data = todos_response.json()
 
-		# Prepare data for json
+        # Prepare data for json
         json_data = {user_id: []}
         for todo in todos_data:
             task_completed_status = todo['completed']
             task_title = todo['title']
-            json_data[user_id].append({"task": task_title, "completed": task_completed_status, "username": employee_name})
+            json_data[user_id].append({"task": task_title,
+                                       "completed": task_completed_status,
+                                       "username": employee_name})
 
         # Write to CSV file
         json_filename = f"{user_id}.json"
         with open(json_filename, mode='w') as json_file:
             json.dump(json_data, json_file)
-
 
     except requests.exceptions.RequestException as e:
         print(f"Error: {e}")

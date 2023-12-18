@@ -31,7 +31,9 @@ if __name__ == "__main__":
 			for todo in todos_data:
 				task_completed_status = todo['completed']
 				task_title = todo['title']
-				json_data[user_id].append({"username": employee_name, "task": task_title, "completed": task_completed_status})
+				json_data[user_id].append({"username": employee_name,
+								"task": task_title,
+								"completed": task_completed_status})
 
 		except requests.exceptions.RequestException as e:
 			print(f"Error: {e}")
@@ -41,5 +43,3 @@ if __name__ == "__main__":
 		json_filename = "todo_all_employees.json"
 		with open(json_filename, mode='w') as json_file:
 			json.dump(json_data, json_file)
-
-
