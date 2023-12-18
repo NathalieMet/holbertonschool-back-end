@@ -17,25 +17,25 @@ if __name__ == "__main__":
     todos_url = f"{employee_url}/todos"
 
     try:
-        # Fetch employee information
+        """ Fetch employee information """
         employee_response = requests.get(employee_url)
         employee_data = employee_response.json()
         employee_name = employee_data.get('name')
 
-        # Fetch TODO list for the employee
+        """ Fetch TODO list for the employee """
         todos_response = requests.get(todos_url)
         todos_data = todos_response.json()
 
-        # Calculate progress
+        """ Calculate progress """
         total_tasks = len(todos_data)
         completed_tasks = sum(1 for todo in todos_data if todo['completed'])
 
-        # Display progress information
+        """ Display progress information """
         print(
             f"Employee {employee_name} is done with "
             f"tasks({completed_tasks}/{total_tasks}):")
 
-        # Display titles of completed tasks
+        """ Display titles of completed tasks """
         completed_task_titles = [todo['title'] for todo
                                  in todos_data if todo['completed']]
         for title in completed_task_titles:
