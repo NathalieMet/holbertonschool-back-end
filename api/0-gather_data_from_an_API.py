@@ -31,8 +31,9 @@ if __name__ == "__main__":
         completed_tasks = sum(1 for todo in todos_data if todo['completed'])
 
         # Display progress information
-        print(f"Employee {employee_name} is done with tasks
-              ({completed_tasks}/{total_tasks}): ")
+        print(
+            f"Employee {employee_name} is done with "
+            f"tasks({completed_tasks}/{total_tasks}): ")
 
         # Display titles of completed tasks
         completed_task_titles = [todo['title'] for todo
