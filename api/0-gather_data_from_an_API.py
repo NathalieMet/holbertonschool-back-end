@@ -8,6 +8,8 @@ import requests
 import sys
 
 if __name__ == "__main__":
+    """Actions to be performed only when the script
+    is run directly"""
 
     employee_id = int(sys.argv[1])
     base_url = "https://jsonplaceholder.typicode.com/users"

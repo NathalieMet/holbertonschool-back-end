@@ -9,6 +9,8 @@ import sys
 import json
 
 if __name__ == "__main__":
+    """Actions to be performed only when the script
+    is run directly"""
 
     if len(sys.argv) != 2:
         print("Usage: python script.py <employee_id>")
